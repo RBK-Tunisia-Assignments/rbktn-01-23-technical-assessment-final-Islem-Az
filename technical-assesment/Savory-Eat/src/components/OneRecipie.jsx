@@ -13,8 +13,8 @@ const Onerecepie = ({ one }) => {
           </div>
           <div className="text">
             <h1 className="food">Pizza</h1>
-            <i > 25 Mins</i>
-            <i > Serves: 5 </i>
+            <i> 25 Mins</i>
+            <i> Serves: 5 </i>
 
             <p className="info">Cheesy pizza is a classic pizza topped with a generous amount of melted cheese. The cheese used can vary from mozzarella to cheddar, provolone, or any other type of cheese that melts well.</p>
           </div>
