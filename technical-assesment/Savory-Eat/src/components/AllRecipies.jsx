@@ -16,12 +16,23 @@ const AllRecepies = () => {
       });
   }, []);
 
+  const handleDelete = (recepie_Id) => {
+    axios.delete(`http://localhost:4000/delete/${recepie_Id}`)
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+
 
   return (
     <div className="card-container">
       {recepies.map(food => (
         <div className="card" key={food.recepie_Id}>
-          <button className="delete">delete</button>
+          <button className="delete" onClick={()=>handleDelete(food.recepie_Id)}>delete</button>
           <button className="update">update </button>
           <>
             <div className="header">

@@ -15,9 +15,23 @@ const connection = require("../database-mysql/index")
         if (err) {
             console.log(err)
         } 
-        res.send("")
+        res.send("'recepie posted ??'")
       });
     });
+
+    router.delete("/delete/:recepie_Id" , (req , res ) => {
+        const {recepie_Id} = req.params
+      connection.query("DELETE from recepie WHERE recepie_Id = ?" , recepie_Id , (err) => {
+        if (err) {
+         console.log(err)
+        }
+      else {
+        res.send("deleted") 
+    }
+
+     }) 
+  })
+      
 
 
 
