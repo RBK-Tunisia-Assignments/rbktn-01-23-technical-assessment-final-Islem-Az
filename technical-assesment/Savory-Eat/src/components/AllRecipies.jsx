@@ -1,6 +1,7 @@
 import React from "react";
 import "../index.scss";
 import data from '../data/data.json'
+//step 1 done , a problem happened with the commit , 
 const AllRecepies = () => {
   return (
     <div className="card-container">
