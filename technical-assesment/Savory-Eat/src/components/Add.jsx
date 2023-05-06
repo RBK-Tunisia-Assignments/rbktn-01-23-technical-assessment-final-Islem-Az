@@ -12,14 +12,16 @@ const Add = () => {
   const [recepieImage, setrecepieImage] = useState('');
   const [categorie, setCategorie] = useState('');
   const [recepieDescription , setRecepieDescription] = useState('');
+  const [users_user_Id , setUsersUserId] = useState('');
 
 
   const handleAdd = (e) => {
     e.preventDefault();
-    const newRecepie = { CookTime,PrepTime,recepieName,Serves,recepieIngredients,recepieImage,categorie,recepieDescription };
+    const newRecepie = { CookTime,PrepTime,recepieName,Serves,recepieIngredients,recepieImage,categorie,recepieDescription,users_user_Id:users_user_Id};
     axios.post('http://localhost:4000/post', newRecepie)
       .then(res => {
         console.log(res);
+        window.location.reload("")
       })
       .catch(err => {
         console.log(err);
@@ -60,7 +62,7 @@ const Add = () => {
         <label>Image:</label>
         <input type="text" placeholder="Image URL" value={recepieImage} onChange={(e) => setrecepieImage(e.target.value)}/>
       </div>
-      <button className="create-recipe-btn" onClick={()=>handleAdd}>Create Recipe</button>
+      <button className="create-recipe-btn" onClick={handleAdd}>Create Recipe</button>
     </div>
   );
 };
