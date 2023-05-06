@@ -1,11 +1,24 @@
-import React from "react";
+import { useState , useEffect , React } from "react";
 import "../index.scss";
-import data from '../data/data.json'
-//step 1 done , a problem happened with the commit , 
+//import data from '../data/data.json';
+import axios from 'axios';
+//step 1 done , a problem happened with the commit 
+
+
 const AllRecepies = () => {
+  const [recepies, setRecepies] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/')
+      .then(res => {
+        setRecepies(res.data);
+      });
+  }, []);
+
+
   return (
     <div className="card-container">
-      {data.map(food => (
+      {recepies.map(food => (
       <div className="card">
         <button className="delete">delete</button>
         <button className="update">update </button>

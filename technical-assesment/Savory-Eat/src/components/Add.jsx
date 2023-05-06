@@ -1,17 +1,13 @@
 import React from "react";
 import "../App.css";
+import axios from "axios"
 
 const Add = () => {
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
-  const [publisher, setPublisher] = useState('');
-  const [releaseDate, setReleaseDate] = useState('');
-  const [thumbnailUrl, setThumbnailUrl] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newGame = { title, desc, publisher, release_date: releaseDate, thumbnail_url: thumbnailUrl };
-    axios.post('http://localhost:5000/addgame', newGame)
+    const newRecepie = { recepie_Name, };
+    axios.post('http://localhost:5000/post', newRecepie)
       .then(res => {
         console.log(res);
       })
